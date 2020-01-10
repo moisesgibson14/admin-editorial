@@ -1,0 +1,28 @@
+<div class="row mt-3">
+    <div class="col-md-6">
+        Lista de libros
+    </div>
+    <div class="col-md-6 text-right">
+        <button type="button" class="btn btn-info" routerLink="/alta-libro">Nuevo</button>
+    </div>
+    <div class="col-md-12 mt-3">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Autor</th>
+                    <th scope="col">Editorial</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let libro of data; let i = index;">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{libro.nombre}}</td>
+                    <td>{{libro.autor}}</td>
+                    <td>{{libro.editorial}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
