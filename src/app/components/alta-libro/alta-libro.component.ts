@@ -28,19 +28,24 @@ export class AltaLibroComponent implements OnInit {
   ngOnInit() {
    this.getAutor()
     if(this.idLibro){
-      console.log('obtener el id');
       this.getLibroId();
     }
   }
 
+  /**
+   * Gets libro id
+   */
   getLibroId(){
     this._libroService.getLibroId(this.idLibro).subscribe(
       response  => {
-        console.log(response);
         this.libro.setValue(response)
       }
     )
   }
+
+  /**
+   * Gets autor
+   */
   getAutor(){
     this._libroService.getAutor().subscribe(
       response => {
@@ -48,6 +53,10 @@ export class AltaLibroComponent implements OnInit {
       }
     )
   }
+
+  /**
+   * Determines whether submit on
+   */
   onSubmit(){
     this._libroService.addLibro(this.libro.value).subscribe(
       response => {

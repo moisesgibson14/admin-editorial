@@ -21,6 +21,10 @@ export class AltaAutorComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  /**
+   * submit
+   */
   ngSubmit(){
     this._librosService.addAutor(this.autor.value).subscribe(
       response => {

@@ -16,12 +16,20 @@ export class ListaLibrosComponent implements OnInit {
     this.getLibros()
   }
 
+  /**
+   * Gets libros
+   */
   getLibros(){
     this._librosService.getLibros().subscribe( response => {
       this.data = response
     }, error =>{console.log(error);
     })
   }
+
+  /**
+   * Eliminars lista libros component
+   * @param id 
+   */
   eliminar(id){
     this._librosService.eliminar(id).subscribe( response => {
       console.log(response);
