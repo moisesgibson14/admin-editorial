@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { LibrosService } from 'src/app/services/libros.service';
 
 @Component({
   selector: 'app-alta-autor',
@@ -9,19 +10,22 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class AltaAutorComponent implements OnInit {
 
   autor = new FormGroup({
+    id: new FormControl(''),
     nombre: new FormControl(''),
     nacionalidad: new FormControl(''),
     anio: new FormControl('')
   });
 
-  constructor() { }
+  constructor(private _librosService: LibrosService) { }
 
   ngOnInit() {
   }
 
   ngSubmit(){
-    console.log(this.autor.value);
-    
+    this._librosService.addAutor(this.autor.value).subscribe(
+      response => {
+      }
+    )
   }
 
 }

@@ -44,4 +44,15 @@ export class LibrosService {
     return this.http.delete<any>(this.url+'/libros/'+idLibro, this.httpOptions).pipe(
       tap((data) => { }, (error) => { catchError(this.handleError<any>(error)) }))
   }
+
+  addAutor(data): Observable<any> {
+    return this.http.post<any>(this.url+ '/autores', data, this.httpOptions)
+      .pipe(
+        catchError(this.handleError('addHero', data))
+      );
+  }
+  getAutor(){
+    return this.http.get<any>(this.url + '/autores', this.httpOptions).pipe(
+      tap((data) => { }, (error) => { catchError(this.handleError<any>(error)) }))
+  }
 }

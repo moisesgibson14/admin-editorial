@@ -26,18 +26,7 @@ export class AltaLibroComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.autor = [
-      {
-        "nombre":"J.R.R. Tolkien",
-        "nacionalidad":"Estadonidense",
-        "anio":"1920"
-      },
-      {
-        "nombre":"George RR Martin",
-        "nacionalidad":"Croata",
-        "anio":"1948"
-      }
-    ]
+   this.getAutor()
     if(this.idLibro){
       console.log('obtener el id');
       this.getLibroId();
@@ -52,17 +41,16 @@ export class AltaLibroComponent implements OnInit {
       }
     )
   }
-
   getAutor(){
-
+    this._libroService.getAutor().subscribe(
+      response => {
+        this.autor = response;
+      }
+    )
   }
-
   onSubmit(){
-    console.log(this.libro.value);
     this._libroService.addLibro(this.libro.value).subscribe(
       response => {
-        console.log(response);
-        
       }
     )
   }

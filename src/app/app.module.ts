@@ -10,13 +10,15 @@ import { LibrosService } from './services/libros.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     AltaAutorComponent,
     ListaLibrosComponent,
-    AltaLibroComponent
+    AltaLibroComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

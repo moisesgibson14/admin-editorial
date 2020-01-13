@@ -1,15 +1,15 @@
 <form [formGroup]="autor" (ngSubmit)="ngSubmit()">
     <div class="form-group">
         <label for="nombre">Nombre</label>
-        <input type="text" class="form-control" id="nombre" placeholder="Ingresa nombre de autor" required>
+        <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Ingresa nombre de autor" required>
     </div>
     <div class="form-group">
         <label for="nacionalidad">Nacionalidad</label>
-        <input type="text" class="form-control" id="nacionalidad" required placeholder="Ingresa la nacionalidad del autor">
+        <input type="text" class="form-control" id="nacionalidad" formControlName="nacionalidad" required placeholder="Ingresa la nacionalidad del autor">
     </div>
     <div class="form-group">
         <label for="anio">Año de nacimiento</label>
-        <input type="text" class="form-control" id="anio" required placeholder="Ingresa el año de naciomiento">
+        <input type="text" class="form-control" id="anio" required formControlName="anio" placeholder="Ingresa el año de naciomiento">
     </div>
     <div class="col-md-12 d-flex justify-content-end">
         <button type="button" class="btn btn-secondary mr-2" routerLink="/lista">Cancelar</button>

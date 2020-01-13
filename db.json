@@ -36,8 +36,21 @@
   "autores": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "nombre": "George RR Martin",
+      "nacionalidad": "Estadounidense",
+      "anio": "1964"
+    },
+    {
+      "id": 2,
+      "nombre": "Ken Follett",
+      "nacionalidad": "Estadounidense",
+      "anio": "1964"
+    },
+    {
+      "id": 3,
+      "nombre": "nombre 1",
+      "nacionalidad": "mexico ",
+      "anio": "1982"
     }
   ]
 }
