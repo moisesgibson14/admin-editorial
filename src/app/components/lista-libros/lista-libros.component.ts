@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LibrosService } from 'src/app/services/libros.service';
 
 @Component({
   selector: 'app-lista-libros',
@@ -7,16 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaLibrosComponent implements OnInit {
   data: any;
-  constructor() { 
+  constructor(private _librosService : LibrosService) { 
     this.data = [];
   }
 
   ngOnInit() {
-    this.data = [
-      { "nombre": "El señor de los anillos", "autor": "J.R.R. Tolkien"  , "editorial":"lorem" },
-      { "nombre": "Cancion de hielo y fuego", "autor": "George RR Martin"  , "editorial":"lorem" },
-      { "nombre": "Los Pilares de la Tierra", "autor": "Ken Follett" , "editorial":"lorem"  }
-    ]
+    this.getLibros()
   }
 
+  getLibros(){
+    this._librosService.getLibros().subscribe( response => {
+      this.data = response
+    }, error =>{console.log(error);
+    })
+  }
+  eliminar(id){
+    this._librosService.eliminar(id).subscribe( response => {
+      console.log(response);
+      this.getLibros()
+    })
+  }
 }

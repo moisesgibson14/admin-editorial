@@ -7,6 +7,9 @@ import { AltaAutorComponent } from './components/alta-autor/alta-autor.component
 import { ListaLibrosComponent } from './components/lista-libros/lista-libros.component';
 import { AltaLibroComponent } from './components/alta-libro/alta-libro.component';
 import { LibrosService } from './services/libros.service';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,11 @@ import { LibrosService } from './services/libros.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [LibrosService],
   bootstrap: [AppComponent]

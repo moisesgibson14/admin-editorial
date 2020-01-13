@@ -9,6 +9,8 @@ const routes: Routes = [
   { path: 'lista', component: ListaLibrosComponent },
   { path: 'alta-libro', component: AltaLibroComponent },
   { path: 'alta-autor', component: AltaAutorComponent },
+  { path: 'alta-libro/:id', component: AltaLibroComponent },
+  { path: 'alta-autor/:id', component: AltaAutorComponent },
   { path: '',
   redirectTo: '/lista',
   pathMatch: 'full'

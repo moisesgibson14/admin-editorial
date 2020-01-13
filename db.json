@@ -1,0 +1,43 @@
+{
+  "libros": [
+    {
+      "id": 1,
+      "nombre": "El señor de los anillos",
+      "autor": "J.R.R. Tolkien",
+      "editorial": "lorem",
+      "idioma": "Español",
+      "descripcion": "desc lorem"
+    },
+    {
+      "id": 2,
+      "nombre": "Cancion de hielo y fuego",
+      "autor": "George RR Martin",
+      "editorial": "lorem",
+      "idioma": "Español",
+      "descripcion": "desc lorem"
+    },
+    {
+      "id": 3,
+      "nombre": "Los Pilares de la Tierra",
+      "autor": "Ken Follett",
+      "editorial": "lorem",
+      "idioma": "Español",
+      "descripcion": "desc lorem"
+    },
+    {
+      "id": 4,
+      "nombre": "lorem 433",
+      "autor": "George RR Martin",
+      "editorial": "abcd lorem",
+      "idioma": "lorem",
+      "descripcion": "2993"
+    }
+  ],
+  "autores": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ]
+}

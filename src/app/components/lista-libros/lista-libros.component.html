@@ -13,14 +13,18 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Autor</th>
                     <th scope="col">Editorial</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let libro of data; let i = index;">
+                <tr *ngFor="let libro of data; let i = index;" class="cursor-pointer"> 
                     <th scope="row">{{i+1}}</th>
-                    <td>{{libro.nombre}}</td>
-                    <td>{{libro.autor}}</td>
-                    <td>{{libro.editorial}}</td>
+                    <td routerLink="/alta-libro/{{libro.id}}">{{libro.nombre}}</td>
+                    <td routerLink="/alta-libro/{{libro.id}}">{{libro.autor}}</td>
+                    <td routerLink="/alta-libro/{{libro.id}}">{{libro.editorial}}</td>
+                    <td>
+                        <button type="button" class="btn btn-danger" (click)="eliminar(libro.id)">Eliminar</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
