@@ -1,14 +1,6 @@
 {
   "libros": [
     {
-      "id": 1,
-      "nombre": "El señor de los anillos",
-      "autor": "J.R.R. Tolkien",
-      "editorial": "lorem",
-      "idioma": "Español",
-      "descripcion": "desc lorem"
-    },
-    {
       "id": 2,
       "nombre": "Cancion de hielo y fuego",
       "autor": "George RR Martin",
@@ -26,11 +18,11 @@
     },
     {
       "id": 4,
-      "nombre": "lorem 433",
-      "autor": "George RR Martin",
-      "editorial": "abcd lorem",
+      "nombre": "prueba 2",
+      "autor": "otro mas",
+      "editorial": "lorem djsjkf",
       "idioma": "lorem",
-      "descripcion": "2993"
+      "descripcion": "lorem2 555555"
     }
   ],
   "autores": [
@@ -48,9 +40,9 @@
     },
     {
       "id": 3,
-      "nombre": "nombre 1",
-      "nacionalidad": "mexico ",
-      "anio": "1982"
+      "nombre": "otro mas",
+      "nacionalidad": "otro 123",
+      "anio": "1992"
     }
   ]
 }

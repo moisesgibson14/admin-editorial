@@ -3,34 +3,26 @@ import { LibrosService } from 'src/app/services/libros.service';
 import Swal from 'sweetalert2'
 
 @Component({
-  selector: 'app-lista-libros',
-  templateUrl: './lista-libros.component.html',
-  styleUrls: ['./lista-libros.component.scss']
+  selector: 'app-lista-autores',
+  templateUrl: './lista-autores.component.html',
+  styleUrls: ['./lista-autores.component.scss']
 })
-export class ListaLibrosComponent implements OnInit {
-  data: any;
-  constructor(private _librosService : LibrosService) { 
-    this.data = [];
-  }
+export class ListaAutoresComponent implements OnInit {
 
+  constructor(private _librosService : LibrosService) { }
+  public data:any;
   ngOnInit() {
-    this.getLibros()
+    this.data = [];
+    this.getAutores()
   }
 
-  /**
-   * Gets libros
-   */
-  getLibros(){
-    this._librosService.getLibros().subscribe( response => {
-      this.data = response
-    }, error =>{console.log(error);
+  getAutores(){
+    this._librosService.getAutor().subscribe(response =>{
+      console.log(response);
+      this.data = response;
     })
   }
 
-  /**
-   * Eliminars lista libros component
-   * @param id 
-   */
   eliminar(id){
     Swal.fire({
       title: '¿Estas seguro?',
@@ -42,16 +34,18 @@ export class ListaLibrosComponent implements OnInit {
       confirmButtonText: 'Si, Eliminar'
     }).then((result) => {
       if (result.value) {
-        this._librosService.eliminar(id).subscribe( response => {
+        this._librosService.eliminarAutor(id).subscribe(response => {
+          console.log('se borro');
           Swal.fire(
             'Eliminado',
             'Se eliminó correctamente.',
             'success'
           )
           console.log(response);
-          this.getLibros()
+          this.getAutores()
         })
       }
     })
   }
+
 }

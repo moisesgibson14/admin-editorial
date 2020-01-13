@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LibrosService } from 'src/app/services/libros.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-alta-libro',
@@ -21,7 +22,7 @@ export class AltaLibroComponent implements OnInit {
     idioma: new FormControl(''),
     descripcion: new FormControl(''),
   });
-  constructor(private route: ActivatedRoute, private _libroService: LibrosService) {
+  constructor(private route: ActivatedRoute, private _libroService: LibrosService, private router: Router) {
     this.idLibro = this.route.snapshot.paramMap.get('id');
    }
 
@@ -60,10 +61,34 @@ export class AltaLibroComponent implements OnInit {
   onSubmit(){
     this._libroService.addLibro(this.libro.value).subscribe(
       response => {
+        if(response){
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Datos guardados correctamente',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          this.router.navigate(['/lista'])
+        }
       }
     )
   }
 
+  updateLibro(){
+    this._libroService.updateLibro(this.idLibro, this.libro.value).subscribe(response => { 
+      if(response){
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Datos actualizados correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        this.router.navigate(['/lista'])
+      }
+    })
+  }
 
 
 }

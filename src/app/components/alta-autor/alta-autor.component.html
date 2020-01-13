@@ -12,7 +12,8 @@
         <input type="text" class="form-control" id="anio" required formControlName="anio" placeholder="Ingresa el año de naciomiento">
     </div>
     <div class="col-md-12 d-flex justify-content-end">
-        <button type="button" class="btn btn-secondary mr-2" routerLink="/lista">Cancelar</button>
-        <button type="submit" class="btn btn-primary" [disabled]="!autor.valid">Guardar</button>
+        <button type="button" class="btn btn-secondary mr-2" routerLink="/lista-autores">Cancelar</button>
+        <button type="submit" class="btn btn-primary" *ngIf="!idAutor" [disabled]="!autor.valid">Guardar</button>
+        <button type="button" class="btn btn-primary" *ngIf="idAutor" (click)="updateAutor()" [disabled]="!autor.valid">Actualizar</button>
     </div>
 </form>

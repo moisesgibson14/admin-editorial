@@ -11,6 +11,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterPipe } from './pipes/filter.pipe';
+import { ListaAutoresComponent } from './components/lista-autores/lista-autores.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     AltaAutorComponent,
     ListaLibrosComponent,
     AltaLibroComponent,
-    FilterPipe
+    FilterPipe,
+    ListaAutoresComponent
   ],
   imports: [
     BrowserModule,

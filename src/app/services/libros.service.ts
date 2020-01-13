@@ -65,6 +65,11 @@ export class LibrosService {
       tap((data) => { }, (error) => { catchError(this.handleError<any>(error)) }))
   }
 
+  updateLibro(idLibro,data){
+    return this.http.put<any>(this.url+'/libros/'+idLibro , data , this.httpOptions).pipe(
+      tap((data) => { }, (error) => { catchError(this.handleError<any>(error)) }))
+  }
+
   /**
    * Adds autor
    * @param data 
@@ -83,6 +88,21 @@ export class LibrosService {
    */
   getAutor(){
     return this.http.get<any>(this.url + '/autores', this.httpOptions).pipe(
+      tap((data) => { }, (error) => { catchError(this.handleError<any>(error)) }))
+  }
+
+  public getAutorId(idAutor){
+    return this.http.get<any>(this.url + '/autores/'+idAutor , this.httpOptions).pipe(
+      tap((data) => { }, (error) => { catchError(this.handleError<any>(error)) }))
+  }
+
+  eliminarAutor(idAutor){
+    return this.http.delete<any>(this.url+'/autores/'+idAutor, this.httpOptions).pipe(
+      tap((data) => { }, (error) => { catchError(this.handleError<any>(error)) }))
+  }
+
+  updateAutor(idAutor, data){
+    return this.http.put<any>(this.url+'/autores/'+idAutor, data ,this.httpOptions).pipe(
       tap((data) => { }, (error) => { catchError(this.handleError<any>(error)) }))
   }
 }
